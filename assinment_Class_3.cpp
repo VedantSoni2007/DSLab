@@ -4,29 +4,46 @@ roll no. Display student found if the roll no. is there and not found if not ?
 */
 
 #include <iostream>
-#include <string>
+
 using namespace std;
 
 int main()
 {
-
     int roll_no[5];
+    int search_roll, found = 0;
 
-    cout << "Enthe the 5 student roll number :" << "\n";
+    cout << "Enter the 5 student roll numbers:\n";
+
 
     for (int i = 0; i < 5; i++)
     {
-        cout << "Roll number " << i + 1 << "\n";
+        cout << "Roll number " << i + 1 << ": ";
         cin >> roll_no[i];
     }
 
+
+    cout << "\nEnter a roll number to search: ";
+    cin >> search_roll;
+
+
     for (int i = 0; i < 5; i++)
     {
-        cout << i + 1 << ")" << "is";
-
-        cout << roll_no[i] << " ";
-
-        cout << "\n";
+        if (roll_no[i] == search_roll)
+        {
+            found = 1;
+            break; 
+        }
     }
+
+
+    if (found == 1)
+    {
+        cout << "Student found\n";
+    }
+    else
+    {
+        cout << "Student not found\n";
+    }
+
     return 0;
 }
